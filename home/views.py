@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-
+from .models import Women
+from rest_framework import generics
+from .serializers import WomenSerilizers
 # Create your views here.
 
 
+class WomenApiView(generics.ListAPIView):
+    queryset = Women.objects.all()
+    serializer_class = WomenSerilizers
 
-class HomeView(TemplateView):
-    template_name = 'home.html'
 
