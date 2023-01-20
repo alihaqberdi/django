@@ -1,13 +1,9 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
-from django.shortcuts import render
-
 
 urlpatterns = [
-    path('', views.HomeView.as_view(),name='home')
+    path('api/', views.WomenApiView.as_view(), name='api')
 ]
-
-
 
 
 
